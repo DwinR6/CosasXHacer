@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CosasPorHacer.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace CosasPorHacer
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ToDoListPage();
         }
 
         protected override void OnStart()

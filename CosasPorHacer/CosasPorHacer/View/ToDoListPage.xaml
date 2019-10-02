@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CosasPorHacer.ViewModel"
+             x:Class="CosasPorHacer.View.ToDoListPage">
+   
+    
+     <ContentPage.BindingContext>
+        
+        <vm:TodoListViewModel/>
+        
+    </ContentPage.BindingContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="Auto"/>
+
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Text="Agregar nueva tarea" Command="{Binding AddItem}"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  Grid.Row="1">
+            <Label Text="Mis tareas:"  TextColor="Blue"  FontAttributes="Italic" FontSize="Medium"/>
+        </StackLayout>
+        
+        <ListView Grid.Row="2" ItemsSource="{Binding Items}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Label Text="{Binding Description}"/>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>

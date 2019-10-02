@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CosasPorHacer.View.AddNewItemPage">
+
+
+    <StackLayout Orientation="Vertical">
+        <Label Text="Description:" FontSize="Large" FontAttributes="Bold"/>
+        <Entry Placeholder="Ingrese una descripción" Text="{Binding Description}"/>
+        <Button Text="Agregar una nueva tarea"  Command="{Binding SaveNewItem}"/>
+        <Button Text="Cancelar" Command="{Binding Cancel}"/>
+    </StackLayout>
+</ContentPage>
